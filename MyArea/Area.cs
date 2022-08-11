@@ -12,7 +12,7 @@ namespace MyArea
         {
             return (float)side * side;
         }
-        public float triangle(int b, int h)
+        public float Triangle(int b, int h)
         {
             return (float).5 * b * h;
         }
