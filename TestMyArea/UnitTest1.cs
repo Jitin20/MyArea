@@ -122,6 +122,14 @@ namespace TestMyArea
             Banking banking = new Banking { id = 2, name="Anshul", Balance=30000};
             string expresult = "Amount < 0";
             string actresult = null;
+            try
+            {
+                banking.Credit(5000);
+            }
+            catch(System.Exception e)
+            {
+                actresult = e.Message;
+            }
             Assert.AreEqual(expresult, actresult, "Balance not matching");
             //banking.Credit(-1500);
             //Assert.AreEqual(31500, banking.Balance, "Balance do not match");
