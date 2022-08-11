@@ -18,6 +18,7 @@ namespace MyArea
         }
 
         public int Rectangle(int l, int b)
+
         {
             return l * b;
         }
