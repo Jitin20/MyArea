@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace MyArea
 {
     public class Area
@@ -33,6 +33,17 @@ namespace MyArea
                 return "Welcome Admin";
             }
             else return "Invalid User";
+        }
+
+        public List<string> GetNames()
+        {
+            List<string> names = new List<string>();
+            names.Add("jitin");
+            names.Add("Anshul");
+            names.Add("Vibhor");
+            names.Add("Akash");
+            names.Add("Namdeo");
+            return names;
         }
     }
 }

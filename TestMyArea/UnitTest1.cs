@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using MyArea;
+using System.Collections.Generic;
 
 namespace TestMyArea
 {
@@ -87,6 +88,25 @@ namespace TestMyArea
             string expresult = "Welcome Admin";
             string actresult = areas.Login("Admin", "Admin");
             Assert.AreEqual(expresult, actresult, "Message not matching");
+        }
+        [Test]
+        public void Invalid_user()
+        {
+            string expresult = "Invalid User";
+            string actresult = areas.Login("Tom", "Tom123");
+            StringAssert.Contains("Invalid", actresult);
+        }
+        [Test]
+        public void Names_Contains_Null()
+        {
+            List<string> names = areas.GetNames();
+            CollectionAssert.AllItemsAreNotNull(names, "Null values present");
+        }
+        [Test]
+        public void Names_has_Unique()
+        {
+            List<string> names = areas.GetNames();
+            CollectionAssert.AllItemsAreUnique(names, "Null values not present");
         }
     }
 }
