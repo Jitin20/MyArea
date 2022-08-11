@@ -11,7 +11,7 @@ namespace TestMyArea
 
         [Test]
         public void Test1()
-        {
+        {   
             Assert.Pass();
         }
     }
