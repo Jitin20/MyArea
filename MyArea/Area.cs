@@ -22,5 +22,17 @@ namespace MyArea
         {
             return l * b;
         }
+        public string Login(string user, string pwd)
+        {
+            if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pwd))
+            {
+                return "User or Pwd is incorrect";
+            }
+            else if (user == "Admin" && pwd == "Admin")
+            {
+                return "Welcome Admin";
+            }
+            else return "Invalid User";
+        }
     }
 }
