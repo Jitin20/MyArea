@@ -1,16 +1,17 @@
 using NUnit.Framework;
 using MyArea;
 using System.Collections.Generic;
-
 namespace TestMyArea
 {
     public class Tests
     {
         Area areas;
+       
         [SetUp]
         public void Setup()
         {
             areas = new Area();
+           
         }
         [TearDown]
         public void Close()
@@ -107,6 +108,23 @@ namespace TestMyArea
         {
             List<string> names = areas.GetNames();
             CollectionAssert.AllItemsAreUnique(names, "Null values not present");
+        }
+        [Test]
+        public void Debit_Check()
+        {
+            Banking banking = new Banking { id = 1, name = "Jitin",Balance= 40000 };
+            banking.Debit(5000);
+            Assert.AreEqual(35000, banking.Balance, "Balance not Matching");
+        }
+        [Test]
+        public void Credit_Message_Check()
+        {
+            Banking banking = new Banking { id = 2, name="Anshul", Balance=30000};
+            string expresult = "Amount < 0";
+            string actresult = null;
+            Assert.AreEqual(expresult, actresult, "Balance not matching");
+            //banking.Credit(-1500);
+            //Assert.AreEqual(31500, banking.Balance, "Balance do not match");
         }
     }
 }
